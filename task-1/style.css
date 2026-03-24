@@ -1,0 +1,209 @@
+/* Variables for a clean, neutral theme */
+:root {
+    --bg-color: #ffffff;
+    --card-bg: #fdfdfd;
+    --text-main: #1a1a1a;
+    --text-secondary: #707070;
+    --accent: #222222;
+    --accent-hover: #000000;
+    --border-color: #eeeeee;
+    --complete-text: #cccccc;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+/* Container for tasks */
+#task-container {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Individual task card styles */
+.task-item {
+    background: var(--card-bg);
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.task-item:hover {
+    border-color: #ddd;
+}
+
+/* Custom checkbox appearance */
+.task-check {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.task-component {
+    flex-grow: 1;
+}
+
+/* Task details */
+.task-component h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.task-component p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Strikethrough for completed tasks */
+.task-item.completed {
+    background-color: #fafafa;
+    opacity: 0.6;
+}
+
+.task-item.completed .task-component h3 {
+    text-decoration: line-through;
+    color: var(--complete-text);
+}
+
+/* Red delete button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e00;
+    cursor: pointer;
+    font-size: 1.1rem;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+/* "Add New Task" button */
+.add-btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Full-screen modal overlay */
+#form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#form-overlay.active {
+    display: flex;
+}
+
+/* Task creation form */
+#task-form {
+    padding: 25px;
+    width: 90%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #eee;
+    background: #fff;
+    border-radius: 8px;
+}
+
+#task-form h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+#task-form label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* User input fields */
+#task-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+/* Submit and cancel actions */
+.form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#submit-btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 2;
+}
+
+.cancel-btn {
+    background: #f4f4f4;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;
+}
