@@ -1,0 +1,94 @@
+/* Reset defaults and set main font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Center calculator on screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1A1A1D, #4E4E50);
+}
+
+/* Main calculator frame and shadow */
+.calculator {
+    width: 320px;
+    background: #111;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Result display area styling */
+.display {
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    word-break: break-all;
+}
+
+/* Grid layout for buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Default button design */
+button {
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect with slight lift */
+button:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+/* Tactile press effect */
+button:active {
+    transform: translateY(1px);
+}
+
+/* Operator and control button coloring */
+.operator { background: #FF9F0A; }
+.operator:hover { background: #FFB340; }
+
+.control { background: #A5A5A5; color: #000; }
+.control:hover { background: #D4D4D2; }
+
+/* Special layout for equals and zero buttons */
+.equals {
+    background: #FF9F0A;
+    grid-row: span 2;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.zero {
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 30px;
+}
