@@ -8,38 +8,39 @@
 </head>
 <body>
 
-    <!-- Main calculator section using semantic HTML elements -->
     <main class="calculator">
-        <!-- Result output area for real-time expression tracking -->
+        <!-- Semantic output for the result display -->
         <output class="display" id="display">0</output>
 
-        <section class="buttons">
-            <button class="control" onclick="clearDisplay()">C</button>
-            <button class="operator" onclick="appendOperator('/')">/</button>
-            <button class="operator" onclick="appendOperator('*')">&times;</button>
-            <button class="control" onclick="deleteLast()">&larr;</button>
+        <section class="buttons" id="button-grid">
+            <!-- Data attributes used for clean logic separation in the module -->
+            <button class="control" data-type="clear">C</button>
+            <button class="operator" data-type="operator" data-value="/">/</button>
+            <button class="operator" data-type="operator" data-value="*">&times;</button>
+            <button class="control" data-type="delete">&larr;</button>
 
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button class="operator" onclick="appendOperator('-')">&minus;</button>
+            <button data-type="number" data-value="7">7</button>
+            <button data-type="number" data-value="8">8</button>
+            <button data-type="number" data-value="9">9</button>
+            <button class="operator" data-type="operator" data-value="-">&minus;</button>
 
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button class="operator" onclick="appendOperator('+')">+</button>
+            <button data-type="number" data-value="4">4</button>
+            <button data-type="number" data-value="5">5</button>
+            <button data-type="number" data-value="6">6</button>
+            <button class="operator" data-type="operator" data-value="+">+</button>
 
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
+            <button data-type="number" data-value="1">1</button>
+            <button data-type="number" data-value="2">2</button>
+            <button data-type="number" data-value="3">3</button>
             
-            <button class="equals" onclick="calculate()">=</button>
+            <button class="equals" data-type="calculate">=</button>
 
-            <button class="zero" onclick="appendNumber('0')">0</button>
-            <button onclick="appendNumber('.')">.</button>
+            <button class="zero" data-type="number" data-value="0">0</button>
+            <button data-type="number" data-value=".">.</button>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Load main logic as a module to support imports -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>

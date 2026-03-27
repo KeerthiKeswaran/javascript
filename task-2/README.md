@@ -1,26 +1,28 @@
-# Simple Calculator
+# Basic Calculator Application
 
 ## Objective
 The goal of this project is to build a basic, responsive calculator that handles fundamental arithmetic operations like addition, subtraction, multiplication, and division.
 
 ## Solution Implemented
-This solution is built using semantic HTML5 and vanilla JavaScript. Key features include:
-- **Expression-Based Evaluation**: The internal state is maintained as a string, allowing for multi-step calculations and proper order of operations (PEMDAS).
-- **Dynamic UI Rendering**: The interface is built using CSS Grid for precise button alignment and mobile responsiveness.
-- **Precision Floating Point Logic**: Specifically handles JavaScript's floating-point math issues ensures accurate results (e.g., `0.1 + 0.2 = 0.3`).
+This version of the application follows a modern, modular architecture. Key technical choices include:
+- **Custom Calculation Engine**: A manually implemented `CalculatorEngine` class handles expression evaluation without using `eval()` or the JavaScript `Function` constructor.
+- **ES Modules**: Utilizes modern ES6 imports/exports to separate calculation logic from UI interactions.
+- **Event Delegation**: Instead of inline HTML event handlers, the project uses a single event listener on the button grid for more efficient and semantic event management.
+- **Semantic HTML5**: Elements like `<main>`, `<section>`, and `<output>` are used to ensure proper structure and accessibility.
+- **Precision Floating Point Logic**: Specifically handles math precision issues to ensure accurate decimal results.
 
 ## Requirements
-- **Interactive UI**: Number and operator buttons implemented in HTML with distinct stylings for usability.
-- **Calculation Engine**: JavaScript capture and processing to manage user inputs and perform math.
-- **Live Display**: Real-time feedback in the display area as the user interacts with the calculator.
+- **Interactive UI**: Number and operator buttons implemented with distinct stylings and data attributes for lean JavaScript integration.
+- **Calculation Engine**: A dedicated class to parse and solve string-based mathematical expressions.
+- **Live Display**: Real-time feedback in the `<output>` area as the user interacts with the calculator.
 
 ## Setup Instructions
 1. **Download**: Clone or download the project files into a local folder.
-2. **Launch**: Open `index.html` in any web browser (no local server required).
-3. **Usage**: Click number and operator buttons to build a calculation, then press `=` to see the result. Use `C` to reset.
+2. **Launch**: Open `index.html` in any modern web browser. 
+3. **Usage**: Use the number and operator buttons to build a calculation, then click `=` to solve. Use `C` to reset.
 
 ## Dependencies
-This application is built entirely with **Vanilla Web Technologies** and has no external dependencies or libraries:
+This application is built entirely with **Vanilla Web Technologies** and has no external dependencies:
 - **HTML5**: For semantic structure.
-- **CSS3**: For custom styling and layout.
-- **JavaScript (ES6+)**: For core logic and state management.
+- **CSS3**: For custom styling and responsive layout.
+- **JavaScript (ES6+)**: For core logic, ES modules, and state management.

@@ -1,75 +1,81 @@
+// Import the custom calculation engine
+import { CalculatorEngine } from './CalculatorEngine.js';
+
+const engine = new CalculatorEngine();
+const display = document.getElementById('display');
+const buttonGrid = document.getElementById('button-grid');
+
 let currentExpression = '0';
 let isResultDisplayed = false;
 
-// Sync display content with current string expression
-function updateDisplay() {
-    document.getElementById('display').textContent = currentExpression;
+/**
+ * Updates the display with the current text
+ */
+function updateUI() {
+    display.textContent = currentExpression;
 }
 
-// Add a number or dot to the current input
-function appendNumber(value) {
-    if (isResultDisplayed) {
-        currentExpression = value === '.' ? '0.' : value;
-        isResultDisplayed = false;
-    } else {
-        // Prevent double decimals in one number
-        if (value === '.') {
-            const parts = currentExpression.split(/[\+\-\*\/]/);
-            if (parts[parts.length - 1].includes('.')) return;
+/**
+ * Core event listener for all calculator buttons using Delegation
+ */
+buttonGrid.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!target.matches('button')) return;
+
+    const { type, value } = target.dataset;
+
+    // Handle number clicks
+    if (type === 'number') {
+        if (isResultDisplayed) {
+            currentExpression = value === '.' ? '0.' : value;
+            isResultDisplayed = false;
+        } else {
+            // Check for duplicate decimal in current number segment
+            if (value === '.') {
+                const parts = currentExpression.split(/[\+\-\*\/]/);
+                if (parts[parts.length - 1].includes('.')) return;
+            }
+
+            currentExpression = currentExpression === '0' && value !== '.' ? value : currentExpression + value;
         }
-
-        currentExpression = currentExpression === '0' && value !== '.' ? value : currentExpression + value;
     }
-    updateDisplay();
-}
 
-// Handle mathematical operators (+, -, *, /)
-function appendOperator(op) {
-    const lastChar = currentExpression.slice(-1);
-    const operators = ['+', '-', '*', '/'];
+    // Handle operator clicks
+    if (type === 'operator') {
+        const lastChar = currentExpression.slice(-1);
+        const operators = ['+', '-', '*', '/'];
 
-    if (isResultDisplayed) isResultDisplayed = false;
+        if (isResultDisplayed) isResultDisplayed = false;
 
-    // Replace the operator if another is pressed consecutively
-    if (operators.includes(lastChar)) {
-        currentExpression = currentExpression.slice(0, -1) + op;
-    } else {
-        currentExpression += op;
+        // Swap the last operator if a new one is selected
+        if (operators.includes(lastChar)) {
+            currentExpression = currentExpression.slice(0, -1) + value;
+        } else {
+            currentExpression += value;
+        }
     }
-    updateDisplay();
-}
 
-// Reset calculator state
-function clearDisplay() {
-    currentExpression = '0';
-    isResultDisplayed = false;
-    updateDisplay();
-}
+    // Handle clear, delete, and equal actions
+    if (type === 'clear') {
+        currentExpression = '0';
+        isResultDisplayed = false;
+    }
 
-// Remove last typed character
-function deleteLast() {
-    currentExpression = currentExpression.length > 1 ? currentExpression.slice(0, -1) : '0';
-    updateDisplay();
-}
+    if (type === 'delete') {
+        currentExpression = currentExpression.length > 1 ? currentExpression.slice(0, -1) : '0';
+    }
 
-// Evaluate string expression and format result
-function calculate() {
-    try {
-        // Evaluate math expression from string
-        const result = new Function(`return ${currentExpression}`)();
+    if (type === 'calculate') {
+        const rawResult = engine.evaluate(currentExpression);
         
-        // Handle floating point errors and edge cases
-        if (Number.isFinite(result)) {
-            currentExpression = Number.isInteger(result) ? result.toString() : parseFloat(result.toFixed(10)).toString();
+        // Final formatting of the results
+        if (typeof rawResult === 'number' && Number.isFinite(rawResult)) {
+            currentExpression = Number.isInteger(rawResult) ? rawResult.toString() : parseFloat(rawResult.toFixed(10)).toString();
         } else {
             currentExpression = 'Error';
         }
         isResultDisplayed = true;
-    } catch {
-        currentExpression = 'Error';
-        isResultDisplayed = true;
     }
-    updateDisplay();
-}
 
-
+    updateUI();
+});
