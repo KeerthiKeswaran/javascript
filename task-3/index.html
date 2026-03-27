@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BirdTube - Classic Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Classic YouTube Header -->
+    <header class="header">
+        <div class="logo-group">
+            <button class="menu-btn" id="menu-toggle" aria-label="Toggle Sidebar">&#9776;</button>
+            <div class="logo">Bird<span>Tube</span></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search birds...">
+            <button>Search</button>
+        </div>
+        <div class="user-actions">Sign In</div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Static Sidebar (Old YT Style) with ID for toggle -->
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li class="active">Home</li>
+                    <li class="section-title">Trending</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Gallery Grid -->
+        <main class="gallery-content">
+            <h3>Featured Bird Watching</h3>
+            <div class="video-grid" id="video-grid">
+                <!-- Video cards will be injected here via JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Lightbox Modal (Styled like a Blog Page) -->
+    <div id="lightbox" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal">&times; Close</button>
+            <article class="blog-post">
+                <img id="modal-image" src="" alt="Selected Bird">
+                <div class="blog-text">
+                    <h1 id="modal-title"></h1>
+                    <p id="modal-description"></p>
+                    <div class="blog-footer">
+                        <span>Published by Ornithologist Today</span>
+                        <span>March 2026</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
