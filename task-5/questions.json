@@ -1,0 +1,32 @@
+[
+    {
+        "question": "What does the 'typeof' operator return for an array?",
+        "options": ["array", "object", "list", "undefined"],
+        "correct": 1,
+        "explanation": "In JavaScript, arrays are technically objects."
+    },
+    {
+        "question": "Which keyword is used to declare a block-scoped variable?",
+        "options": ["var", "let", "global", "static"],
+        "correct": 1,
+        "explanation": "'let' and 'const' provide block scoping, while 'var' is function-scoped."
+    },
+    {
+        "question": "What is the result of '2' + 2 in JavaScript?",
+        "options": ["4", "22", "undefined", "Error"],
+        "correct": 1,
+        "explanation": "The '+' operator performs string concatenation when one of the operands is a string."
+    },
+    {
+        "question": "Which method is used to add an element at the end of an array?",
+        "options": ["push()", "pop()", "shift()", "unshift()"],
+        "correct": 0,
+        "explanation": "push() adds to the end, while unshift() adds to the beginning."
+    },
+    {
+        "question": "What is the primary purpose of the Fetch API?",
+        "options": ["DOM Manipulation", "Data Processing", "Network Requests", "Event Handling"],
+        "correct": 2,
+        "explanation": "The Fetch API provides an interface for fetching resources asynchronously across the network."
+    }
+]

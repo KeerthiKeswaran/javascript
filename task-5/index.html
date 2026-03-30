@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Quiz</h1>
+        
+        <!-- Quiz Main Section -->
+        <div id="quizContainer">
+            <div id="questionContainer">
+                <span id="questionCountLabel">Question 1/5</span>
+                <h2 id="questionText">Loading question...</h2>
+                <div id="optionsContainer">
+                    <!-- Options will be injected here by JS -->
+                </div>
+            </div>
+            
+            <div id="feedbackContainer" class="hidden">
+                <p id="explanationLabel"></p>
+                <button id="nextBtn">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="resultContainer" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <p id="finalScoreDisplay"></p>
+            <button id="restartBtn">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

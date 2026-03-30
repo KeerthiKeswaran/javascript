@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop | Multi-List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Container 1 -->
+        <div class="container">
+            <h1>Pending Tasks</h1>
+            <ul id="list1" class="draggable-list">
+                <li class="draggable-item" draggable="true">Complete Project Report</li>
+                <li class="draggable-item" draggable="true">Review Code PRs</li>
+                <li class="draggable-item" draggable="true">Attend Team Meeting</li>
+                <li class="draggable-item" draggable="true">Refactor CSS Modules</li>
+            </ul>
+        </div>
+
+        <!-- Container 2 - Initially Empty -->
+        <div class="container">
+            <h1>Completed Tasks</h1>
+            <ul id="list2" class="draggable-list">
+                <!-- Drop tasks here to move them to Completed -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

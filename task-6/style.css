@@ -1,0 +1,81 @@
+:root {
+    --bg-color: #f8f9fa;
+    --item-bg: #fff;
+    --border-color: #dee2e6;
+    --dragging-color: #e9ecef;
+    --primary-color: #0d6efd;
+    --empty-bg: #fdfdfd;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 3rem;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--item-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 350px;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #495057;
+}
+
+.draggable-list {
+    list-style: none;
+    padding: 0.5rem;
+    margin: 0;
+    flex-grow: 1; /* Allow the list to take all space in the container */
+    background-color: var(--empty-bg);
+    border: 1.5px dashed transparent;
+    border-radius: 8px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.draggable-list.over-list {
+    background-color: #f0f7ff;
+    border-color: var(--primary-color);
+}
+
+.draggable-item {
+    padding: 1rem 1.25rem;
+    background-color: var(--item-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    cursor: grab;
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+}
+
+.draggable-item.dragging {
+    opacity: 0.4;
+    background-color: var(--dragging-color);
+}
+
+/* Minimalist feedback when hovering items */
+.draggable-item.over {
+    border-top: 2.5px solid var(--primary-color);
+}
