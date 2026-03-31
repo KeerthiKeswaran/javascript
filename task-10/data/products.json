@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Classic White Tee",
+        "price": 499,
+        "category": "Clothing",
+        "description": "Premium cotton basic T-shirt.",
+        "image": "assets/white_tee.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Blue Denim Jacket",
+        "price": 1499,
+        "category": "Clothing",
+        "description": "Distressed denim for a casual look.",
+        "image": "assets/denim_jacket.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Noise-Cancelling Headphones",
+        "price": 2999,
+        "category": "Electronics",
+        "description": "Immersive sound with active noise reduction.",
+        "image": "assets/headphones.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Mechanical Keyboard",
+        "price": 3499,
+        "category": "Electronics",
+        "description": "RGB backlit keyboard for work and gaming.",
+        "image": "assets/keyboard.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Minimalist Analog Watch",
+        "price": 1299,
+        "category": "Accessories",
+        "description": "Sleek timekeeper for modern professionals.",
+        "image": "assets/watch.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Leather Travel Backpack",
+        "price": 2499,
+        "category": "Accessories",
+        "description": "Durable leather with multiple compartments.",
+        "image": "assets/backpack.jpg"
+    }
+]

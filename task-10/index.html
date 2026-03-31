@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal eCommerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopLocal</div>
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search products...">
+            <select id="filter">
+                <option value="all">All Categories</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+        </div>
+        <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+    </header>
+
+    <main class="container">
+        <section id="product-grid" class="grid"></section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-drawer" class="drawer">
+        <div class="drawer-header">
+            <h2>Your Cart</h2>
+            <button id="close-drawer">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="drawer-footer">
+            <div class="summary">
+                <p>Subtotal: ₹<span id="subtotal">0</span></p>
+                <p>Tax (18%): ₹<span id="tax">0</span></p>
+                <p><strong>Total: ₹<span id="total">0</span></strong></p>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

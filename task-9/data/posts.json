@@ -1,0 +1,12 @@
+[
+    { "id": 1, "title": "Understanding JavaScript Closures", "excerpt": "Closures are a fundamental concept in JavaScript..." },
+    { "id": 2, "title": "The Power of Async/Await", "excerpt": "Managing asynchronous operations became easier with ES6..." },
+    { "id": 3, "title": "Vanilla CSS Layouts", "excerpt": "Flexbox and Grid have revolutionized how we design..." },
+    { "id": 4, "title": "Higher-Order Functions", "excerpt": "Functions that take other functions as arguments..." },
+    { "id": 5, "title": "The Virtual DOM Explained", "excerpt": "How React and other frameworks optimize rendering..." },
+    { "id": 6, "title": "Modern JavaScript Tooling", "excerpt": "Webpack, Vite, and the evolution of build tools..." },
+    { "id": 7, "title": "Responsive Design Best Practices", "excerpt": "Ensure your website looks great on all devices..." },
+    { "id": 8, "title": "Debugging with Chrome DevTools", "excerpt": "Tips and tricks for faster troubleshooting..." },
+    { "id": 9, "title": "Performance Optimization Tips", "excerpt": "Make your web apps lightning fast..." },
+    { "id": 10, "title": "API Integration with Fetch", "excerpt": "A deep dive into the Fetch API for networking..." }
+]
